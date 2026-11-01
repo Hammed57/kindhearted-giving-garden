@@ -30,7 +30,7 @@ export const Route = createFileRoute("/donate")({
   component: Donate,
 });
 
-const CAUSES = [
+const CAUSES: string[] = [
   "where it's needed most",
   "small business support",
   "youth transformation",
@@ -47,7 +47,7 @@ const CAUSE_LABELS: Record<string, string> = {
 const AMOUNTS = ["$25", "$50", "$100", "$250", "₦50,000", "₦100,000"];
 
 function Donate() {
-  const [cause, setCause] = useState(CAUSES[0]);
+  const [cause, setCause] = useState<string>("where it's needed most");
   const [amount, setAmount] = useState("$50");
 
   const message = donationMessage(cause, amount);
