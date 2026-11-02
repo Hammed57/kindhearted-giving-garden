@@ -1,1 +1,0 @@
-var e=`/assets/foundation-portrait-UlDXTIPI.jpg`;export{e as t};
