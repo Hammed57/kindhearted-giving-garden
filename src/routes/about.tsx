@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DonateCta } from "@/components/donate-cta";
-import women from "@/assets/women-workshop.jpg";
-import hero from "@/assets/hero-community.jpg";
+import portrait from "@/assets/foundation-portrait.jpg.asset.json";
+import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -45,10 +45,10 @@ function About() {
       <section className="px-5">
         <div className="mx-auto max-w-6xl">
           <img
-            src={hero}
-            alt="Volunteers and families at a community outreach day"
-            width={1600}
-            height={1008}
+            src={outreach.url}
+            alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
+            width={1870}
+            height={841}
             className="aspect-[16/9] w-full rounded-[2rem] object-cover shadow-soft md:aspect-[21/9]"
           />
         </div>
@@ -69,12 +69,12 @@ function About() {
             </p>
           </div>
           <img
-            src={women}
-            alt="Women at an empowerment workshop"
-            width={1280}
-            height={1024}
+            src={portrait.url}
+            alt="Portrait shared on the foundation's Instagram"
+            width={1382}
+            height={1726}
             loading="lazy"
-            className="aspect-[4/3] w-full rounded-[2rem] object-cover"
+            className="mx-auto aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover object-top"
           />
         </div>
       </section>

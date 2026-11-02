@@ -10,7 +10,7 @@ import {
   whatsappLink,
   donationMessage,
 } from "@/lib/contact";
-import youth from "@/assets/youth-mentoring.jpg";
+import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -65,10 +65,10 @@ function Donate() {
             Choose a cause and an amount, then reach out and our team will guide you through giving.
           </p>
           <img
-            src={youth}
-            alt="Young people learning together with a mentor"
-            width={1280}
-            height={1024}
+            src={outreach.url}
+            alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
+            width={1870}
+            height={841}
             loading="lazy"
             className="mt-10 hidden aspect-[4/3] w-full rounded-[2rem] object-cover shadow-soft lg:block"
           />

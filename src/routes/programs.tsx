@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, Radio } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { INSTAGRAM_URL, TIKTOK_URL, INSTAGRAM_HANDLE } from "@/lib/contact";
-import businessOwner from "@/assets/business-owner.jpg";
-import youth from "@/assets/youth-mentoring.jpg";
-import hero from "@/assets/hero-community.jpg";
+import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
+import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
+import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
@@ -30,30 +30,33 @@ const PROGRAMS = [
     title: "Empowering entrepreneurs",
     text: "We help small business owners take their next step, so their businesses can feed families and create jobs.",
     points: ["Boost inventory", "Upgrade equipment", "Marketing & branding"],
-    image: businessOwner,
-    alt: "A market trader standing proudly at her stall",
-    w: 1024,
-    h: 1280,
+    image: businessFlyer.url,
+    alt: "Foundation flyer: What can 100,000 naira do for your business?",
+    w: 1166,
+    h: 1492,
+    frame: "mx-auto aspect-[4/5] max-w-md object-top",
   },
   {
     tag: "Youth transformation",
-    title: "Mentoring young people",
-    text: "Guidance, encouragement and a listening ear for young people as they shape their futures.",
+    title: "Supporting students",
+    text: "Back-to-school support, guidance and encouragement for young people as they shape their futures.",
     points: ["Mentorship", "Skills & learning", "Confidence building"],
-    image: youth,
-    alt: "Teenagers learning with a mentor",
-    w: 1280,
-    h: 1024,
+    image: schoolFlyer.url,
+    alt: "Foundation flyer: Back-to-school edition, 30k each for 6 individuals",
+    w: 640,
+    h: 800,
+    frame: "mx-auto aspect-[4/5] max-w-md object-top",
   },
   {
     tag: "Community outreach",
     title: "Revitalizing communities",
     text: "Showing up for neighbourhoods with care, support and moments that bring people together.",
     points: ["Outreach days", "Family support", "Encouraging hope"],
-    image: hero,
-    alt: "Volunteers handing supplies to children",
-    w: 1600,
-    h: 1008,
+    image: outreach.url,
+    alt: "Women holding food packages from an Olaide Doherty Charity Foundation outreach",
+    w: 1870,
+    h: 841,
+    frame: "aspect-[4/3]",
   },
 ];
 
@@ -79,7 +82,7 @@ function Programs() {
                 width={p.w}
                 height={p.h}
                 loading="lazy"
-                className={`aspect-[4/3] w-full rounded-[2rem] object-cover shadow-soft ${i % 2 === 1 ? "md:order-2" : ""}`}
+                className={`w-full rounded-[2rem] object-cover shadow-soft ${p.frame} ${i % 2 === 1 ? "md:order-2" : ""}`}
               />
               <div>
                 <p className="eyebrow text-primary">{p.tag}</p>
