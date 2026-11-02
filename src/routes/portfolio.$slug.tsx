@@ -1,7 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Instagram, Quote } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, Instagram, Quote, Maximize2 } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { PORTFOLIO, findProject } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/portfolio/$slug")({
@@ -13,7 +15,12 @@ export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ loaderData }) => {
     const p = loaderData?.project;
     if (!p) {
-      return { meta: [{ title: "Project not found — OD Charity Foundation" }, { name: "robots", content: "noindex" }] };
+      return {
+        meta: [
+          { title: "Project not found — OD Charity Foundation" },
+          { name: "robots", content: "noindex" },
+        ],
+      };
     }
     return {
       meta: [
@@ -41,7 +48,8 @@ function ProjectPage() {
   const { project: p } = Route.useLoaderData();
   const idx = PORTFOLIO.findIndex((x) => x.slug === p.slug);
   const next = PORTFOLIO[(idx + 1) % PORTFOLIO.length] ?? PORTFOLIO[0]!;
-  const wide = p.cover.w > p.cover.h;
+  const wide = (p.cover.w ?? 1) > (p.cover.h ?? 1);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <>
@@ -56,22 +64,67 @@ function ProjectPage() {
           <p className="eyebrow mt-8 text-primary">
             {p.category} · {p.date}
           </p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] md:text-7xl">{p.title}</h1>
+          <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] md:text-7xl">
+            {p.title}
+          </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">{p.summary}</p>
         </div>
       </section>
 
       <section className="px-5">
         <div className={`mx-auto ${wide ? "max-w-6xl" : "max-w-md"}`}>
-          <img
-            src={p.cover.src}
-            alt={p.cover.alt}
-            width={p.cover.w}
-            height={p.cover.h}
-            className={`w-full rounded-[2rem] object-cover shadow-soft ${wide ? "aspect-[16/9] md:aspect-[21/9]" : ""}`}
-          />
+          {p.cover.type === "video" ? (
+            <div className="relative overflow-hidden rounded-[2rem] bg-black shadow-soft">
+              <video
+                src={p.cover.src}
+                poster={p.cover.poster}
+                controls
+                playsInline
+                preload="metadata"
+                className={`w-full ${wide ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/5]"} object-contain`}
+              />
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setSelectedImage({ src: p.cover.src, alt: p.cover.alt })}
+              className="group relative block w-full cursor-zoom-in text-left focus:outline-none"
+            >
+              <img
+                src={p.cover.src}
+                alt={p.cover.alt}
+                width={p.cover.w}
+                height={p.cover.h}
+                className={`w-full rounded-[2rem] object-cover shadow-soft transition-transform duration-300 group-hover:brightness-95 ${wide ? "aspect-[16/9] md:aspect-[21/9]" : ""}`}
+              />
+              <span className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                <Maximize2 className="h-4 w-4" />
+              </span>
+            </button>
+          )}
         </div>
       </section>
+
+      {p.video && (
+        <section className="px-5 pt-16">
+          <div className="mx-auto max-w-4xl">
+            <p className="eyebrow text-primary">Featured Video</p>
+            <h2 className="mt-2 text-2xl font-semibold">
+              {p.video.title || `${p.title} in action`}
+            </h2>
+            <div className="mt-6 overflow-hidden rounded-[2rem] bg-black shadow-soft">
+              <video
+                src={p.video.src}
+                poster={p.video.poster}
+                controls
+                playsInline
+                preload="metadata"
+                className="aspect-video w-full object-contain"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {p.stats.length > 0 && (
         <section className="px-5 pt-16">
@@ -104,24 +157,72 @@ function ProjectPage() {
             {p.quote && (
               <figure className="bg-deep rounded-[2rem] p-8 text-primary-foreground shadow-soft">
                 <Quote className="h-8 w-8 text-gold" />
-                <blockquote className="mt-4 font-display text-2xl leading-snug">"{p.quote.text}"</blockquote>
+                <blockquote className="mt-4 font-display text-2xl leading-snug">
+                  "{p.quote.text}"
+                </blockquote>
                 <figcaption className="eyebrow mt-6 text-gold">{p.quote.by}</figcaption>
               </figure>
             )}
-            {p.gallery.map((g) => (
-              <img
-                key={g.src}
-                src={g.src}
-                alt={g.alt}
-                width={g.w}
-                height={g.h}
-                loading="lazy"
-                className="mx-auto w-full max-w-sm rounded-[2rem] shadow-soft"
-              />
-            ))}
+            {p.gallery.map((g) =>
+              g.type === "video" ? (
+                <div key={g.src} className="overflow-hidden rounded-[2rem] bg-black shadow-soft">
+                  <video
+                    src={g.src}
+                    poster={g.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="mx-auto w-full max-w-sm rounded-[2rem] object-contain"
+                  />
+                  {g.title && (
+                    <p className="p-3 text-center text-xs text-muted-foreground">{g.title}</p>
+                  )}
+                </div>
+              ) : (
+                <button
+                  key={g.src}
+                  type="button"
+                  onClick={() => setSelectedImage({ src: g.src, alt: g.alt })}
+                  className="group relative mx-auto block w-full max-w-sm cursor-zoom-in text-left focus:outline-none"
+                >
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    width={g.w}
+                    height={g.h}
+                    loading="lazy"
+                    className="w-full rounded-[2rem] shadow-soft transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                    <Maximize2 className="h-4 w-4" />
+                  </span>
+                </button>
+              ),
+            )}
           </div>
         </div>
       </section>
+
+      {/* Lightbox Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl border-none bg-black/95 p-3 text-white sm:rounded-3xl">
+          <DialogTitle className="sr-only">
+            {selectedImage?.alt || "Enlarged portfolio image"}
+          </DialogTitle>
+          {selectedImage && (
+            <div className="flex flex-col items-center justify-center">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-h-[85vh] w-auto max-w-full rounded-2xl object-contain"
+              />
+              {selectedImage.alt && (
+                <p className="mt-3 text-center text-sm text-white/80">{selectedImage.alt}</p>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <section className="px-5">
         <div className="mx-auto max-w-6xl border-t border-border pt-10">

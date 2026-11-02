@@ -16,10 +16,16 @@ export function BrandMark() {
   return (
     <Link to="/" className="flex items-center gap-3">
       <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-card shadow-soft">
-        <img src={logo.url} alt="Olaide Doherty Charity Foundation logo" className="h-9 w-9 object-contain" />
+        <img
+          src={logo.url}
+          alt="Olaide Doherty Charity Foundation logo"
+          className="h-9 w-9 object-contain"
+        />
       </span>
       <span className="leading-tight">
-        <span className="block font-display text-lg font-semibold text-foreground">Olaide Doherty</span>
+        <span className="block font-display text-lg font-semibold text-foreground">
+          Olaide Doherty
+        </span>
         <span className="block text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
           Charity Foundation
         </span>

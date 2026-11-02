@@ -13,7 +13,8 @@ export function DonateCta() {
           Your gift turns hope into something real.
         </h2>
         <p className="relative mx-auto mt-5 max-w-xl text-primary-foreground/75">
-          Every contribution helps us support small businesses, mentor young people and lift up communities.
+          Every contribution helps us support small businesses, mentor young people and lift up
+          communities.
         </p>
         <Button asChild variant="gold" size="xl" className="relative mt-8">
           <Link to="/donate">

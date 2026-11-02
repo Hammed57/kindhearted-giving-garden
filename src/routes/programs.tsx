@@ -2,22 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Check, Radio } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { INSTAGRAM_URL, TIKTOK_URL, INSTAGRAM_HANDLE } from "@/lib/contact";
-import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
-import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
-import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
-
 export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
       { title: "Our Programs — Olaide Doherty Charity Foundation" },
       {
         name: "description",
-        content: "Small business support, youth transformation and community outreach from the OD Charity Foundation.",
+        content:
+          "Essential food relief, youth transformation and community outreach from the OD Charity Foundation.",
       },
       { property: "og:title", content: "Programs — OD Charity Foundation" },
       {
         property: "og:description",
-        content: "See how the foundation supports entrepreneurs, young people and communities.",
+        content: "See how the foundation supports families, young people and communities.",
       },
     ],
   }),
@@ -26,36 +23,40 @@ export const Route = createFileRoute("/programs")({
 
 const PROGRAMS = [
   {
-    tag: "Small business support",
-    title: "Empowering entrepreneurs",
-    text: "We help small business owners take their next step, so their businesses can feed families and create jobs.",
-    points: ["Boost inventory", "Upgrade equipment", "Marketing & branding"],
-    image: businessFlyer.url,
-    alt: "Foundation flyer: What can 100,000 naira do for your business?",
-    w: 1166,
-    h: 1492,
+    tag: "Food relief & welfare",
+    title: "Essential food relief",
+    text: "Distributing staple food items, grains, cooking oil and packaged relief packages directly to families and individuals in need.",
+    points: [
+      "Staple grains & packaged rice",
+      "Cooking oil & kitchen essentials",
+      "Direct household relief",
+    ],
+    image: "/assets/IMG-20261102-WA0022.jpg",
+    alt: "Olaide Doherty Charity Foundation relief food packages, rice bags, cooking oil and foundation banner",
+    w: 1246,
+    h: 1600,
     frame: "mx-auto aspect-[4/5] max-w-md object-top",
   },
   {
     tag: "Youth transformation",
     title: "Supporting students",
-    text: "Back-to-school support, guidance and encouragement for young people as they shape their futures.",
-    points: ["Mentorship", "Skills & learning", "Confidence building"],
-    image: schoolFlyer.url,
-    alt: "Foundation flyer: Back-to-school edition, 30k each for 6 individuals",
-    w: 640,
-    h: 800,
+    text: "Back-to-school support, backpacks, books and encouragement for young people as they shape their futures.",
+    points: ["Mentorship", "Custom backpacks & supplies", "Confidence building"],
+    image: "/assets/IMG-20261102-WA0024.jpg",
+    alt: "Student before and after receiving new Olaide Doherty Charity Foundation backpack",
+    w: 1600,
+    h: 1600,
     frame: "mx-auto aspect-[4/5] max-w-md object-top",
   },
   {
     tag: "Community outreach",
     title: "Revitalizing communities",
-    text: "Showing up for neighbourhoods with care, support and moments that bring people together.",
-    points: ["Outreach days", "Family support", "Encouraging hope"],
-    image: outreach.url,
-    alt: "Women holding food packages from an Olaide Doherty Charity Foundation outreach",
-    w: 1870,
-    h: 841,
+    text: "Showing up for neighbourhoods with hot meals, food supplies, care, support and moments that bring people together.",
+    points: ["Outreach days", "Nutritious hot meals", "Encouraging hope"],
+    image: "/assets/IMG-20261102-WA0034.jpg",
+    alt: "Olaide Doherty Charity Foundation outreach staff and volunteers with official banner",
+    w: 1600,
+    h: 1020,
     frame: "aspect-[4/3]",
   },
 ];
@@ -118,10 +119,20 @@ function Programs() {
             </div>
           </div>
           <div className="flex gap-3">
-            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+            >
               Instagram
             </a>
-            <a href={TIKTOK_URL} target="_blank" rel="noreferrer" className="rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/5">
+            <a
+              href={TIKTOK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/5"
+            >
               TikTok
             </a>
           </div>

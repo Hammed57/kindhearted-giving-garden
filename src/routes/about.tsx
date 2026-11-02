@@ -10,7 +10,8 @@ export const Route = createFileRoute("/about")({
       { title: "About Us — Olaide Doherty Charity Foundation" },
       {
         name: "description",
-        content: "Learn about the Olaide Doherty Charity Foundation and the values that guide our work.",
+        content:
+          "Learn about the Olaide Doherty Charity Foundation and the values that guide our work.",
       },
       { property: "og:title", content: "About the Olaide Doherty Charity Foundation" },
       {
@@ -38,7 +39,8 @@ function About() {
         <div className="mx-auto max-w-6xl">
           <p className="eyebrow text-primary">About us</p>
           <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] md:text-7xl">
-            A foundation built on <span className="italic text-primary">compassion</span> and community.
+            A foundation built on <span className="italic text-primary">compassion</span> and
+            community.
           </h1>
         </div>
       </section>
@@ -60,13 +62,14 @@ function About() {
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <h2 className="text-3xl font-semibold text-foreground md:text-4xl">Our story</h2>
             <p>
-              The Olaide Doherty Charity Foundation — known to many as the OD Charity Foundation — was founded with a
-              simple belief: when people are given a helping hand, they rise and lift others with them.
+              The Olaide Doherty Charity Foundation — known to many as the OD Charity Foundation —
+              was founded with a simple belief: when people are given a helping hand, they rise and
+              lift others with them.
             </p>
             <p>
-              We support hard-working entrepreneurs, mentor young people and bring communities together. Through
-              outreach, empowerment sessions and live conversations on Instagram and TikTok, we stay close to the people
-              we serve.
+              We support hard-working entrepreneurs, mentor young people and bring communities
+              together. Through outreach, empowerment sessions and live conversations on Instagram
+              and TikTok, we stay close to the people we serve.
             </p>
             <p className="border-l-4 border-gold pl-5 font-display text-2xl italic text-foreground">
               "{MOTTO}."
@@ -93,9 +96,9 @@ function About() {
         <div className="mx-auto max-w-4xl text-center">
           <p className="eyebrow text-primary">A word from our founder</p>
           <blockquote className="mt-6 font-display text-2xl leading-snug md:text-4xl">
-            "We established this organization with a clear purpose: to serve communities in need and create sustainable
-            opportunities and solutions for a better future. Our work is guided by compassion, integrity, and a deep
-            commitment to making a meaningful difference."
+            "We established this organization with a clear purpose: to serve communities in need and
+            create sustainable opportunities and solutions for a better future. Our work is guided
+            by compassion, integrity, and a deep commitment to making a meaningful difference."
           </blockquote>
           <p className="mt-8 text-lg text-muted-foreground">
             With God's help and yours, we can build a more just, hopeful, and compassionate world.

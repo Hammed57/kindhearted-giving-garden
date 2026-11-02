@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { PORTFOLIO } from "@/lib/portfolio";
 import { MOTTO } from "@/lib/brand";
@@ -30,10 +30,12 @@ function PortfolioIndex() {
         <div className="mx-auto max-w-6xl">
           <p className="eyebrow text-primary">Our portfolio</p>
           <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.05] md:text-7xl">
-            {MOTTO.split(" meets ")[0]} <span className="italic text-primary">meets</span> {MOTTO.split(" meets ")[1]}.
+            {MOTTO.split(" meets ")[0]} <span className="italic text-primary">meets</span>{" "}
+            {MOTTO.split(" meets ")[1]}.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            A record of the projects we've delivered with the help of our sponsors, supporters and community.
+            A record of the projects we've delivered with the help of our sponsors, supporters and
+            community.
           </p>
         </div>
       </section>
@@ -47,15 +49,20 @@ function PortfolioIndex() {
               params={{ slug: p.slug }}
               className={`group block ${i % 2 === 1 ? "md:mt-16" : ""}`}
             >
-              <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
+              <div className="relative overflow-hidden rounded-[2rem] bg-card shadow-soft">
                 <img
-                  src={p.cover.src}
+                  src={p.cover.poster || p.cover.src}
                   alt={p.cover.alt}
                   width={p.cover.w}
                   height={p.cover.h}
                   loading={i < 2 ? "eager" : "lazy"}
                   className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
+                {(p.cover.type === "video" || p.video) && (
+                  <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-gold transition-transform group-hover:scale-110">
+                    <Play className="ml-0.5 h-5 w-5 fill-current" />
+                  </span>
+                )}
               </div>
               <div className="mt-6 px-1">
                 <p className="eyebrow text-primary">

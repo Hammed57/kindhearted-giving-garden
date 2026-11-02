@@ -1,0 +1,6 @@
+{
+  "name": "Olaide Doherty Charity Foundation",
+  "description": "The Olaide Doherty Charity Foundation elevates lives, transforms youths and revitalizes communities.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

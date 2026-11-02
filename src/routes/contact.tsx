@@ -18,7 +18,8 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — Olaide Doherty Charity Foundation" },
       {
         name: "description",
-        content: "Get in touch with the Olaide Doherty Charity Foundation by phone, WhatsApp, Instagram or Facebook.",
+        content:
+          "Get in touch with the Olaide Doherty Charity Foundation by phone, WhatsApp, Instagram or Facebook.",
       },
       { property: "og:title", content: "Contact the OD Charity Foundation" },
       {
@@ -40,7 +41,13 @@ function Contact() {
       href: whatsappLink("Hello OD Charity Foundation!"),
       external: true,
     },
-    { icon: Instagram, label: "Instagram", value: INSTAGRAM_HANDLE, href: INSTAGRAM_URL, external: true },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: INSTAGRAM_HANDLE,
+      href: INSTAGRAM_URL,
+      external: true,
+    },
     { icon: Facebook, label: "Facebook", value: FACEBOOK_NAME, href: FACEBOOK_URL, external: true },
   ];
 
@@ -51,7 +58,8 @@ function Contact() {
           <p className="eyebrow text-primary">Contact</p>
           <h1 className="mt-4 text-5xl font-semibold leading-[1.05] md:text-6xl">Let's talk.</h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">
-            Want to donate, volunteer, partner with us or just say hello? Reach out — we'd love to hear from you.
+            Want to donate, volunteer, partner with us or just say hello? Reach out — we'd love to
+            hear from you.
           </p>
 
           <div className="mt-10 grid gap-3 sm:grid-cols-2">
@@ -73,7 +81,12 @@ function Contact() {
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
             Also on{" "}
-            <a href={TIKTOK_URL} target="_blank" rel="noreferrer" className="font-semibold text-primary">
+            <a
+              href={TIKTOK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-primary"
+            >
               TikTok {INSTAGRAM_HANDLE}
             </a>
           </p>

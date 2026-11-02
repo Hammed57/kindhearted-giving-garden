@@ -1,10 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Heart, Sprout, Users, Sparkles, Home, GraduationCap, Sun } from "lucide-react";
+import {
+  ArrowRight,
+  Heart,
+  Sprout,
+  Users,
+  Sparkles,
+  Home,
+  GraduationCap,
+  Sun,
+  Play,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DonateCta } from "@/components/donate-cta";
+import { PORTFOLIO } from "@/lib/portfolio";
 import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
-import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
-import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
 import portrait from "@/assets/foundation-portrait.jpg.asset.json";
 import { MOTTO } from "@/lib/brand";
 
@@ -20,7 +29,8 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Olaide Doherty Charity Foundation" },
       {
         property: "og:description",
-        content: "Elevating lives, enriching people and revitalizing communities. Donate to make a difference.",
+        content:
+          "Elevating lives, enriching people and revitalizing communities. Donate to make a difference.",
       },
     ],
   }),
@@ -28,11 +38,31 @@ export const Route = createFileRoute("/")({
 });
 
 const PILLARS = [
-  { icon: Sprout, title: "Elevating lives", text: "Practical support that helps families stand taller." },
-  { icon: Users, title: "Enriching people", text: "Skills, knowledge and networks that open doors." },
-  { icon: Sparkles, title: "Inspiring dreams", text: "Encouraging people to believe in what's possible." },
-  { icon: Home, title: "Revitalizing community", text: "Bringing neighbours together to grow stronger." },
-  { icon: GraduationCap, title: "Transforming youths", text: "Mentorship that shapes the next generation." },
+  {
+    icon: Sprout,
+    title: "Elevating lives",
+    text: "Practical support that helps families stand taller.",
+  },
+  {
+    icon: Users,
+    title: "Enriching people",
+    text: "Skills, knowledge and networks that open doors.",
+  },
+  {
+    icon: Sparkles,
+    title: "Inspiring dreams",
+    text: "Encouraging people to believe in what's possible.",
+  },
+  {
+    icon: Home,
+    title: "Revitalizing community",
+    text: "Bringing neighbours together to grow stronger.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Transforming youths",
+    text: "Mentorship that shapes the next generation.",
+  },
   { icon: Sun, title: "Encouraging hope", text: "Showing up with kindness when it matters most." },
 ];
 
@@ -54,9 +84,12 @@ function Index() {
           <h1 className="fade-up mt-4 max-w-3xl text-5xl font-semibold leading-[1.02] text-primary-foreground md:text-7xl">
             Elevating lives. <span className="italic text-gold">Inspiring</span> dreams.
           </h1>
-          <p className="fade-up mt-6 font-display text-2xl italic text-gold md:text-3xl">"{MOTTO}."</p>
+          <p className="fade-up mt-6 font-display text-2xl italic text-gold md:text-3xl">
+            "{MOTTO}."
+          </p>
           <p className="fade-up mt-4 max-w-xl text-lg text-primary-foreground/85">
-            We walk alongside individuals, young people and communities, helping them grow, thrive and hope again.
+            We walk alongside individuals, young people and communities, helping them grow, thrive
+            and hope again.
           </p>
           <div className="fade-up mt-9 flex flex-wrap gap-3">
             <Button asChild variant="gold" size="xl">
@@ -82,8 +115,8 @@ function Index() {
               Real support for real people, right where they are.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              From helping small business owners grow, to mentoring young people and bringing communities together,
-              the foundation exists to turn compassion into lasting change.
+              From helping small business owners grow, to mentoring young people and bringing
+              communities together, the foundation exists to turn compassion into lasting change.
             </p>
             <Button asChild variant="hero" size="xl" className="mt-8">
               <Link to="/about">
@@ -113,7 +146,9 @@ function Index() {
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
             <p className="eyebrow text-primary">What we stand for</p>
-            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Six promises we keep.</h2>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+              Six promises we keep.
+            </h2>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {PILLARS.map((p) => (
@@ -138,52 +173,98 @@ function Index() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-xl">
               <p className="eyebrow text-primary">Where your gift goes</p>
-              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Our work in action.</h2>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+                Our work in action.
+              </h2>
             </div>
-            <Link to="/portfolio" className="flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">
+            <Link
+              to="/portfolio"
+              className="flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all"
+            >
               See our portfolio <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-6">
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-8">
             {[
               {
-                img: businessFlyer.url,
-                w: 1166,
-                h: 1492,
-                alt: "Foundation flyer: What can 100,000 naira do for your business?",
-                tag: "Small business support",
-                title: "Helping entrepreneurs grow",
-                text: "Business grants to boost inventory, upgrade equipment and build stronger brands.",
+                slug: "back-to-school-empowerment",
+                tag: "Youth transformation",
+                title: "Back-to-School Student Transformation",
+                summary:
+                  "Equipping children with sturdy custom backpacks and exercise books so they can return to school with confidence.",
+                src: "/assets/IMG-20261102-WA0024.jpg",
+                alt: "Student before and after receiving new Olaide Doherty Charity Foundation backpack",
+                w: 1600,
+                h: 1600,
+                isVideo: false,
                 offset: "",
               },
               {
-                img: schoolFlyer.url,
-                w: 640,
-                h: 800,
-                alt: "Foundation flyer: Back-to-school edition, 30k each for 6 individuals",
-                tag: "Youth transformation",
-                title: "Supporting students",
-                text: "Back-to-school support that helps young people keep learning and dream bigger.",
+                slug: "community-food-outreach",
+                tag: "Community outreach",
+                title: "On-the-Ground Outreach Team",
+                summary:
+                  "Our dedicated volunteers in royal blue and white foundation uniforms bringing care and food relief directly to neighbourhoods.",
+                src: "/assets/IMG-20261102-WA0034.jpg",
+                alt: "Olaide Doherty Charity Foundation outreach staff standing with official banner",
+                w: 1600,
+                h: 1020,
+                isVideo: false,
+                offset: "md:mt-16",
+              },
+              {
+                slug: "live-community-conversations",
+                tag: "Encouraging hope · Video",
+                title: "Community Elder Prayers & Testimony",
+                summary:
+                  "Heartfelt video prayers and blessings from community leaders and elders testifying to the impact of the foundation.",
+                src: "/assets/video-poster.jpg",
+                alt: "Community elder video testimonial and prayers",
+                w: 576,
+                h: 1024,
+                isVideo: true,
+                offset: "",
+              },
+              {
+                slug: "community-food-outreach",
+                tag: "Community outreach",
+                title: "Hot Meals Prepared with Love",
+                summary:
+                  "Volunteer cooking team preparing massive pots of nutritious jollof rice for children, widows, and families in need.",
+                src: "/assets/IMG-20261102-WA0032.jpg",
+                alt: "Foundation kitchen team in OD branded aprons cooking large pots of jollof rice",
+                w: 1200,
+                h: 1600,
+                isVideo: false,
                 offset: "md:mt-16",
               },
             ].map((c) => (
               <article key={c.title} className={`group ${c.offset}`}>
-                <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
-                  <img
-                    src={c.img}
-                    alt={c.alt}
-                    width={c.w}
-                    height={c.h}
-                    loading="lazy"
-                    className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-6 px-1">
-                  <p className="eyebrow text-primary">{c.tag}</p>
-                  <h3 className="mt-2 text-3xl font-semibold">{c.title}</h3>
-                  <p className="mt-2 max-w-sm text-muted-foreground">{c.text}</p>
-                </div>
+                <Link to="/portfolio/$slug" params={{ slug: c.slug }} className="block">
+                  <div className="relative overflow-hidden rounded-[2rem] bg-card shadow-soft">
+                    <img
+                      src={c.src}
+                      alt={c.alt}
+                      width={c.w}
+                      height={c.h}
+                      loading="lazy"
+                      className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {c.isVideo && (
+                      <span className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-gold transition-transform group-hover:scale-110">
+                        <Play className="ml-0.5 h-6 w-6 fill-current" />
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-6 px-1">
+                    <p className="eyebrow text-primary">{c.tag}</p>
+                    <h3 className="mt-2 text-3xl font-semibold transition-colors group-hover:text-primary">
+                      {c.title}
+                    </h3>
+                    <p className="mt-2 max-w-sm text-muted-foreground">{c.summary}</p>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>

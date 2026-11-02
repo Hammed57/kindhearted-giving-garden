@@ -3,13 +3,7 @@ import { useState } from "react";
 import { Heart, MessageCircle, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import {
-  PHONE_DISPLAY,
-  PHONE_TEL,
-  PHONE_SMS,
-  whatsappLink,
-  donationMessage,
-} from "@/lib/contact";
+import { PHONE_DISPLAY, PHONE_TEL, PHONE_SMS, whatsappLink, donationMessage } from "@/lib/contact";
 import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
 
 export const Route = createFileRoute("/donate")({
@@ -18,7 +12,8 @@ export const Route = createFileRoute("/donate")({
       { title: "Donate — Olaide Doherty Charity Foundation" },
       {
         name: "description",
-        content: "Make a donation to the Olaide Doherty Charity Foundation and help elevate lives in our communities.",
+        content:
+          "Make a donation to the Olaide Doherty Charity Foundation and help elevate lives in our communities.",
       },
       { property: "og:title", content: "Donate to the OD Charity Foundation" },
       {
@@ -61,8 +56,9 @@ function Donate() {
             Give hope. <span className="italic text-primary">Change a life.</span>
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Every donation goes towards helping people grow — from funding a small business to mentoring a young person.
-            Choose a cause and an amount, then reach out and our team will guide you through giving.
+            Every donation goes towards helping people grow — from funding a small business to
+            mentoring a young person. Choose a cause and an amount, then reach out and our team will
+            guide you through giving.
           </p>
           <img
             src={outreach.url}
@@ -155,7 +151,10 @@ function Donate() {
               </div>
             </div>
             <p className="mt-5 text-center text-sm text-muted-foreground">
-              To donate, contact <a href={PHONE_TEL} className="font-semibold text-primary">{PHONE_DISPLAY}</a>
+              To donate, contact{" "}
+              <a href={PHONE_TEL} className="font-semibold text-primary">
+                {PHONE_DISPLAY}
+              </a>
             </p>
           </div>
         </div>
