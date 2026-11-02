@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, Radio } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
-import { INSTAGRAM_URL, TIKTOK_URL, INSTAGRAM_HANDLE } from "@/lib/contact";
+import img22 from "@/assets/IMG-20261102-WA0022.jpg";
+import img24 from "@/assets/IMG-20261102-WA0024.jpg";
+import img34 from "@/assets/IMG-20261102-WA0034.jpg";
+
 export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
@@ -31,7 +34,7 @@ const PROGRAMS = [
       "Cooking oil & kitchen essentials",
       "Direct household relief",
     ],
-    image: "/assets/IMG-20261102-WA0022.jpg",
+    image: img22,
     alt: "Olaide Doherty Charity Foundation relief food packages, rice bags, cooking oil and foundation banner",
     w: 1246,
     h: 1600,
@@ -42,7 +45,7 @@ const PROGRAMS = [
     title: "Supporting students",
     text: "Back-to-school support, backpacks, books and encouragement for young people as they shape their futures.",
     points: ["Mentorship", "Custom backpacks & supplies", "Confidence building"],
-    image: "/assets/IMG-20261102-WA0024.jpg",
+    image: img24,
     alt: "Student before and after receiving new Olaide Doherty Charity Foundation backpack",
     w: 1600,
     h: 1600,
@@ -53,7 +56,7 @@ const PROGRAMS = [
     title: "Revitalizing communities",
     text: "Showing up for neighbourhoods with hot meals, food supplies, care, support and moments that bring people together.",
     points: ["Outreach days", "Nutritious hot meals", "Encouraging hope"],
-    image: "/assets/IMG-20261102-WA0034.jpg",
+    image: img34,
     alt: "Olaide Doherty Charity Foundation outreach staff and volunteers with official banner",
     w: 1600,
     h: 1020,

@@ -15,6 +15,10 @@ import { DonateCta } from "@/components/donate-cta";
 import { PORTFOLIO } from "@/lib/portfolio";
 import outreach from "@/assets/outreach-food-distribution.jpg";
 import portrait from "@/assets/foundation-portrait.jpg";
+import img24 from "@/assets/IMG-20261102-WA0024.jpg";
+import img34 from "@/assets/IMG-20261102-WA0034.jpg";
+import img32 from "@/assets/IMG-20261102-WA0032.jpg";
+import videoPoster from "@/assets/video-poster.jpg";
 import { MOTTO } from "@/lib/brand";
 
 export const Route = createFileRoute("/")({
@@ -193,7 +197,7 @@ function Index() {
                 title: "Back-to-School Student Transformation",
                 summary:
                   "Equipping children with sturdy custom backpacks and exercise books so they can return to school with confidence.",
-                src: "/assets/IMG-20261102-WA0024.jpg",
+                src: img24,
                 alt: "Student before and after receiving new Olaide Doherty Charity Foundation backpack",
                 w: 1600,
                 h: 1600,
@@ -206,7 +210,7 @@ function Index() {
                 title: "On-the-Ground Outreach Team",
                 summary:
                   "Our dedicated volunteers in royal blue and white foundation uniforms bringing care and food relief directly to neighbourhoods.",
-                src: "/assets/IMG-20261102-WA0034.jpg",
+                src: img34,
                 alt: "Olaide Doherty Charity Foundation outreach staff standing with official banner",
                 w: 1600,
                 h: 1020,
@@ -219,7 +223,7 @@ function Index() {
                 title: "Community Elder Prayers & Testimony",
                 summary:
                   "Heartfelt video prayers and blessings from community leaders and elders testifying to the impact of the foundation.",
-                src: "/assets/video-poster.jpg",
+                src: videoPoster,
                 alt: "Community elder video testimonial and prayers",
                 w: 576,
                 h: 1024,
@@ -232,7 +236,7 @@ function Index() {
                 title: "Hot Meals Prepared with Love",
                 summary:
                   "Volunteer cooking team preparing massive pots of nutritious jollof rice for children, widows, and families in need.",
-                src: "/assets/IMG-20261102-WA0032.jpg",
+                src: img32,
                 alt: "Foundation kitchen team in OD branded aprons cooking large pots of jollof rice",
                 w: 1200,
                 h: 1600,

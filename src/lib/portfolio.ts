@@ -7,6 +7,21 @@ import outreach from "@/assets/outreach-food-distribution.jpg";
 import communityLive from "@/assets/community-live-flyer.jpg";
 import founderIndependence from "@/assets/founder-independence-day.jpg";
 
+import img20 from "@/assets/IMG-20261102-WA0020.jpg";
+import img21 from "@/assets/IMG-20261102-WA0021.jpg";
+import img22 from "@/assets/IMG-20261102-WA0022.jpg";
+import img24 from "@/assets/IMG-20261102-WA0024.jpg";
+import img26 from "@/assets/IMG-20261102-WA0026.jpg";
+import img28 from "@/assets/IMG-20261102-WA0028.jpg";
+import img29 from "@/assets/IMG-20261102-WA0029.jpg";
+import img30 from "@/assets/IMG-20261102-WA0030.jpg";
+import img31 from "@/assets/IMG-20261102-WA0031.jpg";
+import img32 from "@/assets/IMG-20261102-WA0032.jpg";
+import img33 from "@/assets/IMG-20261102-WA0033.jpg";
+import img34 from "@/assets/IMG-20261102-WA0034.jpg";
+import videoElder from "@/assets/VID-20261102-WA0038.mp4";
+import videoPoster from "@/assets/video-poster.jpg";
+
 export type PortfolioMedia = {
   type?: "image" | "video";
   src: string;
@@ -47,7 +62,7 @@ export const PORTFOLIO: PortfolioProject[] = [
     summary:
       "Equipping children with sturdy custom backpacks, notebooks, and learning essentials so parents can send them to school with pride.",
     cover: {
-      src: "/assets/IMG-20261102-WA0024.jpg",
+      src: img24,
       alt: "Student before and after receiving new Olaide Doherty Charity Foundation backpack",
       w: 1600,
       h: 1600,
@@ -64,25 +79,25 @@ export const PORTFOLIO: PortfolioProject[] = [
     ],
     gallery: [
       {
-        src: "/assets/IMG-20261102-WA0020.jpg",
+        src: img20,
         alt: "Schoolchildren proudly displaying their new Olaide Doherty Charity Foundation notebooks",
         w: 1080,
         h: 826,
       },
       {
-        src: "/assets/IMG-20261102-WA0021.jpg",
+        src: img21,
         alt: "Custom branded Olaide Doherty Charity Foundation backpacks prepared for students",
         w: 1250,
         h: 1600,
       },
       {
-        src: "/assets/IMG-20261102-WA0026.jpg",
+        src: img26,
         alt: "Primary school girl showing before with torn schoolbag and now with her new OD Foundation backpack",
         w: 862,
         h: 1080,
       },
       {
-        src: "/assets/IMG-20261102-WA0031.jpg",
+        src: img31,
         alt: "Two student brothers in uniform before with damaged bags and now wearing their new foundation schoolbags",
         w: 1024,
         h: 1280,
@@ -114,7 +129,7 @@ export const PORTFOLIO: PortfolioProject[] = [
     summary:
       "Nutritious hot meals, bulk rice, cooking oil, and packaged food provisions delivered by hand to widows, families, and orphans.",
     cover: {
-      src: "/assets/IMG-20261102-WA0034.jpg",
+      src: img34,
       alt: "Olaide Doherty Charity Foundation outreach staff and volunteers standing with the official community food outreach banner",
       w: 1600,
       h: 1020,
@@ -131,37 +146,37 @@ export const PORTFOLIO: PortfolioProject[] = [
     ],
     gallery: [
       {
-        src: "/assets/IMG-20261102-WA0028.jpg",
+        src: img28,
         alt: "Smiling young girl receiving a freshly cooked packaged meal from an outreach volunteer",
         w: 1200,
         h: 1600,
       },
       {
-        src: "/assets/IMG-20261102-WA0032.jpg",
+        src: img32,
         alt: "Foundation kitchen team in OD branded blue aprons cooking large pots of jollof rice",
         w: 1200,
         h: 1600,
       },
       {
-        src: "/assets/IMG-20261102-WA0033.jpg",
+        src: img33,
         alt: "Hundreds of neatly stacked, packaged meal boxes ready for community distribution beside the official banner",
         w: 1280,
         h: 942,
       },
       {
-        src: "/assets/IMG-20261102-WA0022.jpg",
+        src: img22,
         alt: "Holiday food packages, rice, King's vegetable oil and seasonings displayed in front of the foundation backdrop",
         w: 1246,
         h: 1600,
       },
       {
-        src: "/assets/IMG-20261102-WA0029.jpg",
+        src: img29,
         alt: "Warehouse inventory of rice sacks procured for food distribution",
         w: 740,
         h: 987,
       },
       {
-        src: "/assets/IMG-20261102-WA0030.jpg",
+        src: img30,
         alt: "Pantry warehouse stacked with food grain sacks for the community drive",
         w: 810,
         h: 1080,
@@ -188,15 +203,15 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Video testimonials from elders and community beneficiaries, plus weekly live sessions that unite supporters from Nigeria to the diaspora.",
     cover: {
       type: "video",
-      src: "/assets/VID-20261102-WA0038.mp4",
-      poster: "/assets/video-poster.jpg",
+      src: videoElder,
+      poster: videoPoster,
       alt: "Community elder giving heartfelt prayers and testimonial for the Olaide Doherty Charity Foundation",
       w: 1024,
       h: 576,
     },
     video: {
-      src: "/assets/VID-20261102-WA0038.mp4",
-      poster: "/assets/video-poster.jpg",
+      src: videoElder,
+      poster: videoPoster,
       title: "Community Elder Prayers & Testimonial for OD Charity Foundation",
     },
     stats: [
@@ -212,8 +227,8 @@ export const PORTFOLIO: PortfolioProject[] = [
     gallery: [
       {
         type: "video",
-        src: "/assets/VID-20261102-WA0038.mp4",
-        poster: "/assets/video-poster.jpg",
+        src: videoElder,
+        poster: videoPoster,
         alt: "Community elder video testimonial and prayers for OD Charity Foundation",
         title: "Video: Community Elder Prayers & Testimonial (1:45)",
       },
