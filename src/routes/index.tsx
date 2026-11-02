@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Heart, Sprout, Users, Sparkles, Home, GraduationCap, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DonateCta } from "@/components/donate-cta";
-import hero from "@/assets/hero-community.jpg";
-import businessOwner from "@/assets/business-owner.jpg";
-import youth from "@/assets/youth-mentoring.jpg";
-import women from "@/assets/women-workshop.jpg";
+import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
+import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
+import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
+import portrait from "@/assets/foundation-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,10 +41,10 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={hero}
-          alt="Foundation volunteers sharing supplies with smiling children and families"
-          width={1600}
-          height={1008}
+          src={outreach.url}
+          alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
+          width={1870}
+          height={841}
           className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
         <div className="bg-hero-overlay absolute inset-0 -z-10" />
@@ -89,14 +89,14 @@ function Index() {
               </Link>
             </Button>
           </div>
-          <div className="relative">
+          <div className="relative mx-auto w-full max-w-md">
             <img
-              src={women}
-              alt="Women sharing ideas at a community empowerment workshop"
-              width={1280}
-              height={1024}
+              src={portrait.url}
+              alt="Portrait shared on the foundation's Instagram"
+              width={1382}
+              height={1726}
               loading="lazy"
-              className="aspect-[5/4] w-full rounded-[2rem] object-cover shadow-soft"
+              className="aspect-[4/5] w-full rounded-[2rem] object-cover object-top shadow-soft"
             />
             <div className="absolute -bottom-6 -left-4 rounded-2xl bg-gold px-6 py-4 text-gold-foreground shadow-gold md:-left-8">
               <p className="font-display text-3xl font-semibold">6</p>
@@ -143,43 +143,47 @@ function Index() {
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <article className="group relative overflow-hidden rounded-[2rem]">
-              <img
-                src={businessOwner}
-                alt="A proud market trader at her fabric stall"
-                width={1024}
-                height={1280}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="bg-hero-overlay absolute inset-0" />
-              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
-                <p className="eyebrow text-gold">Small business support</p>
-                <h3 className="mt-2 text-3xl font-semibold">Helping entrepreneurs grow</h3>
-                <p className="mt-2 max-w-sm text-primary-foreground/80">
-                  Boosting inventory, upgrading equipment and building stronger brands.
-                </p>
-              </div>
-            </article>
-            <article className="group relative overflow-hidden rounded-[2rem] md:mt-16">
-              <img
-                src={youth}
-                alt="A mentor guiding teenagers around a laptop"
-                width={1280}
-                height={1024}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="bg-hero-overlay absolute inset-0" />
-              <div className="absolute inset-x-0 bottom-0 p-8 text-primary-foreground">
-                <p className="eyebrow text-gold">Youth transformation</p>
-                <h3 className="mt-2 text-3xl font-semibold">Shaping tomorrow's leaders</h3>
-                <p className="mt-2 max-w-sm text-primary-foreground/80">
-                  Mentorship and encouragement that help young people dream bigger.
-                </p>
-              </div>
-            </article>
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-6">
+            {[
+              {
+                img: businessFlyer.url,
+                w: 1166,
+                h: 1492,
+                alt: "Foundation flyer: What can 100,000 naira do for your business?",
+                tag: "Small business support",
+                title: "Helping entrepreneurs grow",
+                text: "Business grants to boost inventory, upgrade equipment and build stronger brands.",
+                offset: "",
+              },
+              {
+                img: schoolFlyer.url,
+                w: 640,
+                h: 800,
+                alt: "Foundation flyer: Back-to-school edition, 30k each for 6 individuals",
+                tag: "Youth transformation",
+                title: "Supporting students",
+                text: "Back-to-school support that helps young people keep learning and dream bigger.",
+                offset: "md:mt-16",
+              },
+            ].map((c) => (
+              <article key={c.title} className={`group ${c.offset}`}>
+                <div className="overflow-hidden rounded-[2rem] bg-card shadow-soft">
+                  <img
+                    src={c.img}
+                    alt={c.alt}
+                    width={c.w}
+                    height={c.h}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-6 px-1">
+                  <p className="eyebrow text-primary">{c.tag}</p>
+                  <h3 className="mt-2 text-3xl font-semibold">{c.title}</h3>
+                  <p className="mt-2 max-w-sm text-muted-foreground">{c.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

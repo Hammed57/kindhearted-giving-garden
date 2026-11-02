@@ -10,7 +10,7 @@ import {
   FACEBOOK_NAME,
   whatsappLink,
 } from "@/lib/contact";
-import women from "@/assets/women-workshop.jpg";
+import portrait from "@/assets/foundation-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -80,12 +80,12 @@ function Contact() {
         </div>
 
         <img
-          src={women}
-          alt="Women gathered at a foundation workshop"
-          width={1280}
-          height={1024}
+          src={portrait.url}
+          alt="Portrait shared on the foundation's Instagram"
+          width={1382}
+          height={1726}
           loading="lazy"
-          className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-soft lg:aspect-auto lg:h-full"
+          className="aspect-[4/5] w-full rounded-[2rem] object-cover object-top shadow-soft lg:aspect-auto lg:h-full"
         />
       </div>
     </section>
