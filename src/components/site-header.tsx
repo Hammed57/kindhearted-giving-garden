@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import logo from "@/assets/od-mark.png.asset.json";
 
 const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/programs", label: "Programs" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Home", exact: true },
+  { to: "/about", label: "About", exact: true },
+  { to: "/programs", label: "Programs", exact: true },
+  { to: "/portfolio", label: "Portfolio", exact: false },
+  { to: "/contact", label: "Contact", exact: true },
 ] as const;
 
 export function BrandMark() {

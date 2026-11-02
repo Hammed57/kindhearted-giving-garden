@@ -6,6 +6,7 @@ import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
 import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
 import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
 import portrait from "@/assets/foundation-portrait.jpg.asset.json";
+import { MOTTO } from "@/lib/brand";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,7 +54,8 @@ function Index() {
           <h1 className="fade-up mt-4 max-w-3xl text-5xl font-semibold leading-[1.02] text-primary-foreground md:text-7xl">
             Elevating lives. <span className="italic text-gold">Inspiring</span> dreams.
           </h1>
-          <p className="fade-up mt-6 max-w-xl text-lg text-primary-foreground/85">
+          <p className="fade-up mt-6 font-display text-2xl italic text-gold md:text-3xl">"{MOTTO}."</p>
+          <p className="fade-up mt-4 max-w-xl text-lg text-primary-foreground/85">
             We walk alongside individuals, young people and communities, helping them grow, thrive and hope again.
           </p>
           <div className="fade-up mt-9 flex flex-wrap gap-3">
@@ -92,7 +94,7 @@ function Index() {
           <div className="relative mx-auto w-full max-w-md">
             <img
               src={portrait.url}
-              alt="Portrait shared on the foundation's Instagram"
+              alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
               width={1382}
               height={1726}
               loading="lazy"
@@ -138,8 +140,8 @@ function Index() {
               <p className="eyebrow text-primary">Where your gift goes</p>
               <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">Our work in action.</h2>
             </div>
-            <Link to="/programs" className="flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">
-              See all programs <ArrowRight className="h-4 w-4" />
+            <Link to="/portfolio" className="flex items-center gap-2 font-semibold text-primary hover:gap-3 transition-all">
+              See our portfolio <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 

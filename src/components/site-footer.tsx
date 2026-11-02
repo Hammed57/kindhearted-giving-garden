@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Instagram, Facebook } from "lucide-react";
+import { MOTTO } from "@/lib/brand";
 import {
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -16,6 +17,7 @@ export function SiteFooter() {
         <div>
           <p className="font-display text-2xl font-semibold">Olaide Doherty</p>
           <p className="eyebrow mt-1 text-gold">Charity Foundation</p>
+          <p className="mt-5 font-display text-xl italic text-gold">"{MOTTO}."</p>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
             Elevating lives, enriching people, inspiring dreams, revitalizing community, transforming youths and
             encouraging hope.
@@ -27,6 +29,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-3 text-sm">
             <li><Link to="/about" className="text-primary-foreground/80 hover:text-gold">About us</Link></li>
             <li><Link to="/programs" className="text-primary-foreground/80 hover:text-gold">Our programs</Link></li>
+            <li><Link to="/portfolio" className="text-primary-foreground/80 hover:text-gold">Portfolio</Link></li>
             <li><Link to="/donate" className="text-primary-foreground/80 hover:text-gold">Donate</Link></li>
             <li><Link to="/contact" className="text-primary-foreground/80 hover:text-gold">Contact</Link></li>
           </ul>
