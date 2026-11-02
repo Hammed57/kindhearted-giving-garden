@@ -81,7 +81,7 @@ function Contact() {
 
         <img
           src={portrait.url}
-          alt="Portrait shared on the foundation's Instagram"
+          alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
           width={1382}
           height={1726}
           loading="lazy"

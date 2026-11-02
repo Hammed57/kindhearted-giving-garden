@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { DonateCta } from "@/components/donate-cta";
 import portrait from "@/assets/foundation-portrait.jpg.asset.json";
 import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
+import { MOTTO, RALLY_CRY } from "@/lib/brand";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -67,15 +68,39 @@ function About() {
               outreach, empowerment sessions and live conversations on Instagram and TikTok, we stay close to the people
               we serve.
             </p>
+            <p className="border-l-4 border-gold pl-5 font-display text-2xl italic text-foreground">
+              "{MOTTO}."
+            </p>
           </div>
-          <img
-            src={portrait.url}
-            alt="Portrait shared on the foundation's Instagram"
-            width={1382}
-            height={1726}
-            loading="lazy"
-            className="mx-auto aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover object-top"
-          />
+          <figure>
+            <img
+              src={portrait.url}
+              alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
+              width={1382}
+              height={1726}
+              loading="lazy"
+              className="mx-auto aspect-[4/5] w-full max-w-md rounded-[2rem] object-cover object-top"
+            />
+            <figcaption className="mx-auto mt-4 max-w-md">
+              <span className="block font-display text-xl font-semibold">Olaide Doherty</span>
+              <span className="eyebrow text-muted-foreground">Founder</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="bg-ivory px-5 py-20 md:py-28">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="eyebrow text-primary">A word from our founder</p>
+          <blockquote className="mt-6 font-display text-2xl leading-snug md:text-4xl">
+            "We established this organization with a clear purpose: to serve communities in need and create sustainable
+            opportunities and solutions for a better future. Our work is guided by compassion, integrity, and a deep
+            commitment to making a meaningful difference."
+          </blockquote>
+          <p className="mt-8 text-lg text-muted-foreground">
+            With God's help and yours, we can build a more just, hopeful, and compassionate world.
+          </p>
+          <p className="eyebrow mt-8 text-primary">— Olaide Doherty · {RALLY_CRY}</p>
         </div>
       </section>
 
