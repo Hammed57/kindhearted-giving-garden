@@ -67,8 +67,8 @@ export const PORTFOLIO: PortfolioProject[] = [
     },
     stats: [
       { value: "₦30,000", label: "Per family" },
-      { value: "7", label: "Parents supported" },
-      { value: "₦180k+", label: "Given in one day" },
+      { value: "6", label: "Families planned" },
+      { value: "7", label: "Parents reached" },
     ],
     story: [
       "Our Back-to-School Empowerment Edition set out to give ₦30,000 each to six people who really needed help getting their children ready for the new term.",
@@ -101,11 +101,7 @@ export const PORTFOLIO: PortfolioProject[] = [
       w: 1870,
       h: 841,
     },
-    stats: [
-      { value: "Hand", label: "Delivered" },
-      { value: "Families", label: "Supported" },
-      { value: "Hope", label: "Shared" },
-    ],
+    stats: [],
     story: [
       "Our outreach days bring food and care directly to the people who need it most. Women and families receive food packages and, just as importantly, a reminder that they are seen.",
       "These outreaches are how we live out our motto every day: where giving meets the needs.",
