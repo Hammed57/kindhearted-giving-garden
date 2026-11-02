@@ -1,11 +1,11 @@
 // Projects documented on the foundation's Instagram (@olaidedohertycharityfoundation).
 // Recipient names and payment receipts from those posts are intentionally left out.
-import businessFlyer from "@/assets/business-grant-flyer.jpg.asset.json";
-import schoolFlyer from "@/assets/back-to-school-flyer.jpg.asset.json";
-import schoolLive from "@/assets/back-to-school-live-flyer.jpg.asset.json";
-import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
-import communityLive from "@/assets/community-live-flyer.jpg.asset.json";
-import founderIndependence from "@/assets/founder-independence-day.jpg.asset.json";
+import businessFlyer from "@/assets/business-grant-flyer.jpg";
+import schoolFlyer from "@/assets/back-to-school-flyer.jpg";
+import schoolLive from "@/assets/back-to-school-live-flyer.jpg";
+import outreach from "@/assets/outreach-food-distribution.jpg";
+import communityLive from "@/assets/community-live-flyer.jpg";
+import founderIndependence from "@/assets/founder-independence-day.jpg";
 
 export type PortfolioMedia = {
   type?: "image" | "video";
@@ -88,13 +88,13 @@ export const PORTFOLIO: PortfolioProject[] = [
         h: 1280,
       },
       {
-        src: schoolFlyer.url,
+        src: schoolFlyer,
         alt: "Foundation flyer: Back-to-school edition, 30k each for 6 individuals",
         w: 640,
         h: 800,
       },
       {
-        src: schoolLive.url,
+        src: schoolLive,
         alt: "Flyer: Join us on TikTok for the Back-to-School Empowerment Edition",
         w: 361,
         h: 640,
@@ -167,7 +167,7 @@ export const PORTFOLIO: PortfolioProject[] = [
         h: 1080,
       },
       {
-        src: outreach.url,
+        src: outreach,
         alt: "Women holding food packages from an Olaide Doherty Charity Foundation outreach",
         w: 1870,
         h: 841,
@@ -218,13 +218,13 @@ export const PORTFOLIO: PortfolioProject[] = [
         title: "Video: Community Elder Prayers & Testimonial (1:45)",
       },
       {
-        src: founderIndependence.url,
+        src: founderIndependence,
         alt: "Independence Day message from founder Olaide Doherty",
         w: 360,
         h: 640,
       },
       {
-        src: communityLive.url,
+        src: communityLive,
         alt: "Flyer: Hey everyone! Let's meet live on TikTok this Wednesday to catch up",
         w: 1152,
         h: 1168,
@@ -244,7 +244,7 @@ export const PORTFOLIO: PortfolioProject[] = [
     summary:
       "₦100,000 grants that helped hard-working small business owners restock, upgrade and grow.",
     cover: {
-      src: businessFlyer.url,
+      src: businessFlyer,
       alt: "Foundation flyer: What can 100,000 naira do for your business?",
       w: 1166,
       h: 1492,

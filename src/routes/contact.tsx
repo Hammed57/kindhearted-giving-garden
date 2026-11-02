@@ -10,7 +10,7 @@ import {
   FACEBOOK_NAME,
   whatsappLink,
 } from "@/lib/contact";
-import portrait from "@/assets/foundation-portrait.jpg.asset.json";
+import portrait from "@/assets/foundation-portrait.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -93,7 +93,7 @@ function Contact() {
         </div>
 
         <img
-          src={portrait.url}
+          src={portrait}
           alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
           width={1382}
           height={1726}

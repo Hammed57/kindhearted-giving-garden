@@ -4,7 +4,7 @@ import { Heart, MessageCircle, Phone, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { PHONE_DISPLAY, PHONE_TEL, PHONE_SMS, whatsappLink, donationMessage } from "@/lib/contact";
-import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
+import outreach from "@/assets/outreach-food-distribution.jpg";
 
 export const Route = createFileRoute("/donate")({
   head: () => ({
@@ -61,7 +61,7 @@ function Donate() {
             guide you through giving.
           </p>
           <img
-            src={outreach.url}
+            src={outreach}
             alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
             width={1870}
             height={841}

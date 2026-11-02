@@ -13,8 +13,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { DonateCta } from "@/components/donate-cta";
 import { PORTFOLIO } from "@/lib/portfolio";
-import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
-import portrait from "@/assets/foundation-portrait.jpg.asset.json";
+import outreach from "@/assets/outreach-food-distribution.jpg";
+import portrait from "@/assets/foundation-portrait.jpg";
 import { MOTTO } from "@/lib/brand";
 
 export const Route = createFileRoute("/")({
@@ -72,7 +72,7 @@ function Index() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={outreach.url}
+          src={outreach}
           alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
           width={1870}
           height={841}
@@ -126,7 +126,7 @@ function Index() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             <img
-              src={portrait.url}
+              src={portrait}
               alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
               width={1382}
               height={1726}

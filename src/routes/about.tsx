@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DonateCta } from "@/components/donate-cta";
-import portrait from "@/assets/foundation-portrait.jpg.asset.json";
-import outreach from "@/assets/outreach-food-distribution.jpg.asset.json";
+import portrait from "@/assets/foundation-portrait.jpg";
+import outreach from "@/assets/outreach-food-distribution.jpg";
 import { MOTTO, RALLY_CRY } from "@/lib/brand";
 
 export const Route = createFileRoute("/about")({
@@ -48,7 +48,7 @@ function About() {
       <section className="px-5">
         <div className="mx-auto max-w-6xl">
           <img
-            src={outreach.url}
+            src={outreach}
             alt="Women holding food packages from an Olaide Doherty Charity Foundation outreach"
             width={1870}
             height={841}
@@ -77,7 +77,7 @@ function About() {
           </div>
           <figure>
             <img
-              src={portrait.url}
+              src={portrait}
               alt="Olaide Doherty, founder of the Olaide Doherty Charity Foundation"
               width={1382}
               height={1726}

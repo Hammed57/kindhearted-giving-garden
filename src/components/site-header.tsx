@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/od-mark.png.asset.json";
+import logo from "@/assets/od-mark.png";
 
 const NAV = [
   { to: "/", label: "Home", exact: true },
@@ -17,7 +17,7 @@ export function BrandMark() {
     <Link to="/" className="flex items-center gap-3">
       <span className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-card shadow-soft">
         <img
-          src={logo.url}
+          src={logo}
           alt="Olaide Doherty Charity Foundation logo"
           className="h-9 w-9 object-contain"
         />
