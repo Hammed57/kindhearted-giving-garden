@@ -40,7 +40,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
 function ProjectPage() {
   const { project: p } = Route.useLoaderData();
   const idx = PORTFOLIO.findIndex((x) => x.slug === p.slug);
-  const next = PORTFOLIO[(idx + 1) % PORTFOLIO.length];
+  const next = PORTFOLIO[(idx + 1) % PORTFOLIO.length] ?? PORTFOLIO[0]!;
   const wide = p.cover.w > p.cover.h;
 
   return (
