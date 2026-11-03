@@ -102,7 +102,7 @@ function Index() {
               </Link>
             </Button>
             <Button asChild variant="glass" size="xl">
-              <Link to="/programs">
+              <Link to="/portfolio">
                 Our work <ArrowRight />
               </Link>
             </Button>
