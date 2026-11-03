@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DonateCta } from "@/components/donate-cta";
+import { DonationGoal } from "@/components/donation-goal";
 import { PORTFOLIO } from "@/lib/portfolio";
 import outreach from "@/assets/outreach-food-distribution.jpg";
 import portrait from "@/assets/foundation-portrait.jpg";
@@ -274,6 +275,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <DonationGoal />
 
       <DonateCta />
     </>
