@@ -48,6 +48,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/bank-transfer" className="text-primary-foreground/80 hover:text-gold">
+                Bank transfer
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" className="text-primary-foreground/80 hover:text-gold">
                 Contact
               </Link>

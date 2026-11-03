@@ -18,7 +18,6 @@ import img31 from "@/assets/IMG-20261102-WA0031.jpg";
 import img32 from "@/assets/IMG-20261102-WA0032.jpg";
 import img33 from "@/assets/IMG-20261102-WA0033.jpg";
 import img34 from "@/assets/IMG-20261102-WA0034.jpg";
-import videoElder from "@/assets/VID-20261102-WA0038.mp4";
 import videoPoster from "@/assets/video-poster.jpg";
 import packedMealsVideo from "@/assets/packed-meals-outreach.mp4.asset.json";
 import packedMealsPoster from "@/assets/meal-boxes-poster.jpg.asset.json";
@@ -215,7 +214,7 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Video testimonials from elders and community beneficiaries, plus weekly live sessions that unite supporters from Nigeria to the diaspora.",
     cover: {
       type: "video",
-      src: videoElder,
+      src: elderThanksVideo.url,
       poster: videoPoster,
       alt: "Community elder giving heartfelt prayers and testimonial for the Olaide Doherty Charity Foundation",
       w: 1024,
