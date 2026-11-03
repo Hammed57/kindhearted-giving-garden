@@ -221,11 +221,6 @@ export const PORTFOLIO: PortfolioProject[] = [
       w: 1024,
       h: 576,
     },
-    video: {
-      src: videoElder,
-      poster: videoPoster,
-      title: "Community Elder Prayers & Testimonial for OD Charity Foundation",
-    },
     stats: [
       { value: "Weekly", label: "Live streams" },
       { value: "1:45 min", label: "Elder testimony" },
@@ -237,13 +232,6 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Watch the video testimonial above, where community elders offer prayers and blessings for the foundation, our founder Olaide Doherty, and all sponsors who make this work possible.",
     ],
     gallery: [
-      {
-        type: "video",
-        src: videoElder,
-        poster: videoPoster,
-        alt: "Community elder video testimonial and prayers for OD Charity Foundation",
-        title: "Video: Community Elder Prayers & Testimonial (1:45)",
-      },
       {
         type: "video",
         src: elderThanksVideo.url,
