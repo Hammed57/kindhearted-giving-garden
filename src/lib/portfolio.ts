@@ -5,7 +5,6 @@ import schoolFlyer from "@/assets/back-to-school-flyer.jpg";
 import schoolLive from "@/assets/back-to-school-live-flyer.jpg";
 import outreach from "@/assets/outreach-food-distribution.jpg";
 import communityLive from "@/assets/community-live-flyer.jpg";
-import founderIndependence from "@/assets/founder-independence-day.jpg";
 
 import img20 from "@/assets/IMG-20261102-WA0020.jpg";
 import img21 from "@/assets/IMG-20261102-WA0021.jpg";
@@ -258,12 +257,6 @@ export const PORTFOLIO: PortfolioProject[] = [
         poster: motherThanksPoster.url,
         alt: "A mother in a green patterned dress sharing her gratitude for the foundation's support",
         title: "Video: A mother shares her gratitude (0:49)",
-      },
-      {
-        src: founderIndependence,
-        alt: "Independence Day message from founder Olaide Doherty",
-        w: 360,
-        h: 640,
       },
       {
         src: communityLive,
