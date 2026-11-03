@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, Radio } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, TIKTOK_URL } from "@/lib/contact";
 import img22 from "@/assets/IMG-20261102-WA0022.jpg";
 import img24 from "@/assets/IMG-20261102-WA0024.jpg";
 import img34 from "@/assets/IMG-20261102-WA0034.jpg";
