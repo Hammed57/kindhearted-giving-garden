@@ -21,6 +21,12 @@ import img33 from "@/assets/IMG-20261102-WA0033.jpg";
 import img34 from "@/assets/IMG-20261102-WA0034.jpg";
 import videoElder from "@/assets/VID-20261102-WA0038.mp4";
 import videoPoster from "@/assets/video-poster.jpg";
+import packedMealsVideo from "@/assets/packed-meals-outreach.mp4.asset.json";
+import packedMealsPoster from "@/assets/meal-boxes-poster.jpg.asset.json";
+import elderThanksVideo from "@/assets/elder-thanks-testimony.mp4.asset.json";
+import elderThanksPoster from "@/assets/elder-thanks-poster.jpg.asset.json";
+import motherThanksVideo from "@/assets/mother-thanks-testimony.mp4.asset.json";
+import motherThanksPoster from "@/assets/mother-thanks-poster.jpg.asset.json";
 
 export type PortfolioMedia = {
   type?: "image" | "video";
@@ -164,6 +170,13 @@ export const PORTFOLIO: PortfolioProject[] = [
         h: 942,
       },
       {
+        type: "video",
+        src: packedMealsVideo.url,
+        poster: packedMealsPoster.url,
+        alt: "Rows of sealed meal boxes labelled with the Olaide Doherty Charity Foundation sticker",
+        title: "Video: Hundreds of meal boxes packed and ready to share",
+      },
+      {
         src: img22,
         alt: "Holiday food packages, rice, King's vegetable oil and seasonings displayed in front of the foundation backdrop",
         w: 1246,
@@ -231,6 +244,20 @@ export const PORTFOLIO: PortfolioProject[] = [
         poster: videoPoster,
         alt: "Community elder video testimonial and prayers for OD Charity Foundation",
         title: "Video: Community Elder Prayers & Testimonial (1:45)",
+      },
+      {
+        type: "video",
+        src: elderThanksVideo.url,
+        poster: elderThanksPoster.url,
+        alt: "An elderly woman in a pink cap giving thanks to the foundation",
+        title: "Video: An elder's words of thanks (0:40)",
+      },
+      {
+        type: "video",
+        src: motherThanksVideo.url,
+        poster: motherThanksPoster.url,
+        alt: "A mother in a green patterned dress sharing her gratitude for the foundation's support",
+        title: "Video: A mother shares her gratitude (0:49)",
       },
       {
         src: founderIndependence,
