@@ -3,6 +3,21 @@ import { ArrowRight, Play } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { PORTFOLIO } from "@/lib/portfolio";
 import { MOTTO } from "@/lib/brand";
+import girlMeal from "@/assets/IMG-20261102-WA0028.jpg";
+import girlBag from "@/assets/IMG-20261102-WA0026.jpg";
+import brothersBags from "@/assets/IMG-20261102-WA0031.jpg";
+import studentBag from "@/assets/IMG-20261102-WA0024.jpg";
+import riceSacks from "@/assets/IMG-20261102-WA0029.jpg";
+import riceWarehouse from "@/assets/IMG-20261102-WA0030.jpg";
+
+const HIGHLIGHTS = [
+  { src: girlMeal, alt: "Young girl receiving a packaged meal from a volunteer", caption: "A hot meal handed to a young girl" },
+  { src: girlBag, alt: "Schoolgirl before and after receiving a new foundation backpack", caption: "Before & after: a new school bag" },
+  { src: riceSacks, alt: "Sacks of rice stacked for food distribution", caption: "Bags of rice ready for families" },
+  { src: brothersBags, alt: "Two brothers before and after receiving new school bags", caption: "Before & after: brothers back to school" },
+  { src: riceWarehouse, alt: "Rice sacks stacked high in the store", caption: "Rice stacked up for the outreach" },
+  { src: studentBag, alt: "Student before and after receiving a foundation backpack", caption: "Before & after: ready for class" },
+];
 
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
@@ -76,6 +91,26 @@ function PortfolioIndex() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-ivory px-5 py-16 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="eyebrow text-primary">Moments from the field</p>
+          <h2 className="mt-4 text-4xl font-semibold md:text-5xl">Photo highlights</h2>
+          <div className="mt-10 columns-2 gap-4 md:columns-3 [&>*]:mb-4">
+            {HIGHLIGHTS.map((h) => (
+              <figure key={h.src} className="break-inside-avoid">
+                <img
+                  src={h.src}
+                  alt={h.alt}
+                  loading="lazy"
+                  className="w-full rounded-2xl shadow-soft"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">{h.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
