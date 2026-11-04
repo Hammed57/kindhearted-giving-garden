@@ -212,6 +212,12 @@ function BankTransferPage() {
                       <strong className="font-mono text-foreground">{account.swiftBic}</strong>
                     </span>
                   )}
+                  {account.wireRouting && (
+                    <span>
+                      Wire transfer routing:{" "}
+                      <strong className="font-mono text-foreground">{account.wireRouting}</strong>
+                    </span>
+                  )}
                   {account.notes && <span className="italic">{account.notes}</span>}
                 </div>
               </div>
