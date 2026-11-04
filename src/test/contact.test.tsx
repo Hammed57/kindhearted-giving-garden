@@ -18,10 +18,20 @@ describe("donation contact", () => {
 
   it("provides organization bank account details", () => {
     expect(BANK_ACCOUNTS.length).toBeGreaterThan(0);
-    const ngn = BANK_ACCOUNTS.find((a) => a.id === "ngn-primary");
-    expect(ngn).toBeDefined();
-    expect(ngn?.accountNumber).toBe("1018892341");
-    expect(ngn?.accountName).toContain("Olaide Doherty Charity Foundation");
+    const opay = BANK_ACCOUNTS.find((a) => a.bankName === "Opay");
+    expect(opay?.accountNumber).toBe("9169711132");
+    expect(opay?.accountName).toBe("Olaide Doherty");
+  });
+
+  it("Bank of America account and wire routing", () => {
+    const boa = BANK_ACCOUNTS.find((a) => a.bankName === "Bank of America");
+    expect(boa?.accountNumber).toBe("081904808");
+    expect(boa?.accountName).toBe("Olaidestouch LLC");
+    expect(boa?.wireRouting).toBe("026009593");
+  });
+
+  it("old Zenith accounts are gone", () => {
+    expect(BANK_ACCOUNTS.some((a) => a.bankName.includes("Zenith"))).toBe(false);
   });
 
   it("formats card donation message properly", () => {

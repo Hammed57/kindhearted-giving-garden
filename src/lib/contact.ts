@@ -29,6 +29,7 @@ export interface BankAccount {
   accountType: string;
   swiftBic?: string;
   sortCode?: string;
+  wireRouting?: string;
   notes?: string;
 }
 
@@ -36,26 +37,25 @@ export const ORGANIZATION_NAME = "Olaide Doherty Charity Foundation";
 
 export const BANK_ACCOUNTS: BankAccount[] = [
   {
-    id: "ngn-primary",
+    id: "ngn-opay",
     label: "Naira Account (NGN)",
-    bankName: "Zenith Bank PLC",
-    accountName: "Olaide Doherty Charity Foundation",
-    accountNumber: "1018892341",
+    bankName: "Opay",
+    accountName: "Olaide Doherty",
+    accountNumber: "9169711132",
     currency: "NGN (₦)",
-    accountType: "Corporate / NGO Account",
-    sortCode: "057150013",
-    notes: "Ideal for online banking, bank apps, and USSD transfers within Nigeria",
+    accountType: "Opay Account",
+    notes: "For transfers within Nigeria",
   },
   {
-    id: "usd-domiciliary",
-    label: "USD Domiciliary Account",
-    bankName: "Zenith Bank PLC",
-    accountName: "Olaide Doherty Charity Foundation",
-    accountNumber: "5071192834",
+    id: "usd-boa",
+    label: "USD Account (United States)",
+    bankName: "Bank of America",
+    accountName: "Olaidestouch LLC",
+    accountNumber: "081904808",
     currency: "USD ($)",
-    accountType: "Domiciliary Current Account",
-    swiftBic: "ZEBLNGLA",
-    notes: "For diaspora supporters and international bank wire transfers",
+    accountType: "Bank of America Account",
+    wireRouting: "026009593",
+    notes: "For supporters in the US and international wire transfers",
   },
 ];
 
