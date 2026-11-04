@@ -22,14 +22,14 @@ import {
 } from "@/lib/contact";
 
 interface BankTransferSearch {
-  cause?: string;
-  amount?: string;
+  cause?: string | undefined;
+  amount?: string | undefined;
 }
 
 export const Route = createFileRoute("/bank-transfer")({
   validateSearch: (search: Record<string, unknown>): BankTransferSearch => ({
-    cause: typeof search.cause === "string" ? search.cause : undefined,
-    amount: typeof search.amount === "string" ? search.amount : undefined,
+    cause: typeof search["cause"] === "string" ? search["cause"] : undefined,
+    amount: typeof search["amount"] === "string" ? search["amount"] : undefined,
   }),
   head: () => ({
     meta: [
