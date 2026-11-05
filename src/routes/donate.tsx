@@ -48,15 +48,17 @@ export const Route = createFileRoute("/donate")({
   component: Donate,
 });
 
-const CAUSES: string[] = [
+export const CAUSES: string[] = [
   "where it's needed most",
+  "food",
   "small business support",
   "youth transformation",
   "community outreach",
 ];
 
-const CAUSE_LABELS: Record<string, string> = {
+export const CAUSE_LABELS: Record<string, string> = {
   "where it's needed most": "Where needed most",
+  food: "Food",
   "small business support": "Small businesses",
   "youth transformation": "Youth",
   "community outreach": "Community",
