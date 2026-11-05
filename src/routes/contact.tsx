@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Phone, Instagram, Facebook, MessageCircle, Mail } from "lucide-react";
 import {
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -8,6 +8,8 @@ import {
   TIKTOK_URL,
   FACEBOOK_URL,
   FACEBOOK_NAME,
+  EMAIL_ADDRESS,
+  EMAIL_LINK,
   whatsappLink,
 } from "@/lib/contact";
 import portrait from "@/assets/foundation-portrait.jpg";
@@ -34,6 +36,7 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   const channels = [
     { icon: Phone, label: "Call us", value: PHONE_DISPLAY, href: PHONE_TEL, external: false },
+    { icon: Mail, label: "Email us", value: EMAIL_ADDRESS, href: EMAIL_LINK, external: false },
     {
       icon: MessageCircle,
       label: "WhatsApp",

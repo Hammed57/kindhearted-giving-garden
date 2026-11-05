@@ -5,10 +5,17 @@ import {
   BANK_ACCOUNTS,
   cardDonationMessage,
   bankTransferConfirmationMessage,
+  EMAIL_ADDRESS,
+  EMAIL_LINK,
 } from "@/lib/contact";
 import { CAUSES, CAUSE_LABELS } from "@/routes/donate";
 
 describe("donation contact", () => {
+  it("provides the foundation email address", () => {
+    expect(EMAIL_ADDRESS).toBe("olaidedohertycharityfoundation@gmail.com");
+    expect(EMAIL_LINK).toBe("mailto:olaidedohertycharityfoundation@gmail.com");
+  });
+
   it("offers Food as a donation cause", () => {
     expect(CAUSES).toContain("food");
     expect(CAUSE_LABELS["food"]).toBe("Food");

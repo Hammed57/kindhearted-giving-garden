@@ -26,6 +26,8 @@ import {
   whatsappLink,
   donationMessage,
   cardDonationMessage,
+  EMAIL_ADDRESS,
+  EMAIL_LINK,
 } from "@/lib/contact";
 import outreach from "@/assets/outreach-food-distribution.jpg";
 
@@ -204,6 +206,11 @@ function Donate() {
               <a href={PHONE_TEL} className="font-semibold text-primary">
                 {PHONE_DISPLAY}
               </a>
+              {" or email "}
+              <a href={EMAIL_LINK} className="font-semibold text-primary">
+                {EMAIL_ADDRESS}
+              </a>
+              .
             </p>
           </div>
         </div>
