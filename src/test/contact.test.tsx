@@ -11,7 +11,7 @@ import { CAUSES, CAUSE_LABELS } from "@/routes/donate";
 describe("donation contact", () => {
   it("offers Food as a donation cause", () => {
     expect(CAUSES).toContain("food");
-    expect(CAUSE_LABELS.food).toBe("Food");
+    expect(CAUSE_LABELS["food"]).toBe("Food");
   });
 
   it("donations go to 7732098983 by phone", () => {
