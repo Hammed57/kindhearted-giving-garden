@@ -26,6 +26,12 @@ import elderThanksPoster from "@/assets/elder-thanks-poster.jpg.asset.json";
 import motherThanksVideo from "@/assets/mother-thanks-testimony.mp4.asset.json";
 import motherThanksPoster from "@/assets/mother-thanks-poster.jpg.asset.json";
 
+const LOVABLE_ASSET_ORIGIN = "https://kindhearted-giving-garden.lovable.app";
+
+function hostedAssetUrl(url: string) {
+  return new URL(url, LOVABLE_ASSET_ORIGIN).toString();
+}
+
 export type PortfolioMedia = {
   type?: "image" | "video";
   src: string;
@@ -169,8 +175,8 @@ export const PORTFOLIO: PortfolioProject[] = [
       },
       {
         type: "video",
-        src: packedMealsVideo.url,
-        poster: packedMealsPoster.url,
+        src: hostedAssetUrl(packedMealsVideo.url),
+        poster: hostedAssetUrl(packedMealsPoster.url),
         alt: "Rows of sealed meal boxes labelled with the Olaide Doherty Charity Foundation sticker",
         title: "Video: Hundreds of meal boxes packed and ready to share",
       },
@@ -214,7 +220,7 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Video testimonials from elders and community beneficiaries, plus weekly live sessions that unite supporters from Nigeria to the diaspora.",
     cover: {
       type: "video",
-      src: elderThanksVideo.url,
+      src: hostedAssetUrl(elderThanksVideo.url),
       poster: videoPoster,
       alt: "Community elder giving heartfelt prayers and testimonial for the Olaide Doherty Charity Foundation",
       w: 1024,
@@ -233,15 +239,15 @@ export const PORTFOLIO: PortfolioProject[] = [
     gallery: [
       {
         type: "video",
-        src: elderThanksVideo.url,
-        poster: elderThanksPoster.url,
+        src: hostedAssetUrl(elderThanksVideo.url),
+        poster: hostedAssetUrl(elderThanksPoster.url),
         alt: "An elderly woman in a pink cap giving thanks to the foundation",
         title: "Video: An elder's words of thanks (0:40)",
       },
       {
         type: "video",
-        src: motherThanksVideo.url,
-        poster: motherThanksPoster.url,
+        src: hostedAssetUrl(motherThanksVideo.url),
+        poster: hostedAssetUrl(motherThanksPoster.url),
         alt: "A mother in a green patterned dress sharing her gratitude for the foundation's support",
         title: "Video: A mother shares her gratitude (0:49)",
       },

@@ -19,6 +19,8 @@ import {
   PHONE_TEL,
   bankTransferConfirmationMessage,
   whatsappLink,
+  EMAIL_ADDRESS,
+  EMAIL_LINK,
 } from "@/lib/contact";
 
 interface BankTransferSearch {
@@ -237,6 +239,13 @@ function BankTransferPage() {
                 Please notify us via WhatsApp or phone with your payment receipt or screenshot so
                 our treasury team can log your contribution, send an official acknowledgement, and
                 ensure it is allocated to your chosen cause.
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                For other questions, email{" "}
+                <a href={EMAIL_LINK} className="font-semibold text-primary underline underline-offset-4">
+                  {EMAIL_ADDRESS}
+                </a>
+                .
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">

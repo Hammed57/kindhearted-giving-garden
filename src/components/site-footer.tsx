@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Instagram, Facebook } from "lucide-react";
+import { Phone, Instagram, Facebook, Mail } from "lucide-react";
 import { MOTTO } from "@/lib/brand";
 import {
   PHONE_DISPLAY,
@@ -8,6 +8,8 @@ import {
   INSTAGRAM_HANDLE,
   FACEBOOK_URL,
   FACEBOOK_NAME,
+  EMAIL_ADDRESS,
+  EMAIL_LINK,
 } from "@/lib/contact";
 
 export function SiteFooter() {
@@ -69,6 +71,14 @@ export function SiteFooter() {
                 className="flex items-center gap-2 text-primary-foreground/80 hover:text-gold"
               >
                 <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
+              </a>
+            </li>
+            <li>
+              <a
+                href={EMAIL_LINK}
+                className="flex items-center gap-2 text-primary-foreground/80 hover:text-gold"
+              >
+                <Mail className="h-4 w-4" /> {EMAIL_ADDRESS}
               </a>
             </li>
             <li>
