@@ -29,7 +29,7 @@ const VALUES = [
   "Inspiring dreams",
   "Revitalizing community",
   "Transforming youths",
-  "Encouraging hopes",
+  "Encouraging hope",
 ];
 
 function About() {
