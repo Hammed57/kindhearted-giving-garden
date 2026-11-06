@@ -16,3 +16,4 @@
 - Contact/donation details live only in `src/lib/contact.ts`; import from there so the number changes in one place.
 - Shared header/footer are rendered in `src/routes/__root.tsx` around `<Outlet />`; each page is its own route file.
 - Donations are routed to the foundation by WhatsApp/call/text links (no payment provider yet), so no data is stored.
+- Portfolio video and poster assets use absolute URLs from the published site so they remain available on custom-hosted deployments.
