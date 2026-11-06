@@ -25,6 +25,8 @@ import elderThanksVideo from "@/assets/elder-thanks-testimony.mp4.asset.json";
 import elderThanksPoster from "@/assets/elder-thanks-poster.jpg.asset.json";
 import motherThanksVideo from "@/assets/mother-thanks-testimony.mp4.asset.json";
 import motherThanksPoster from "@/assets/mother-thanks-poster.jpg.asset.json";
+import beneficiaryTestimonialVideo from "@/assets/community-beneficiary-testimonial.mp4.asset.json";
+import beneficiaryTestimonialPoster from "@/assets/community-beneficiary-testimonial-poster.jpg.asset.json";
 
 const LOVABLE_ASSET_ORIGIN = "https://kindhearted-giving-garden.lovable.app";
 
@@ -250,6 +252,13 @@ export const PORTFOLIO: PortfolioProject[] = [
         poster: hostedAssetUrl(motherThanksPoster.url),
         alt: "A mother in a green patterned dress sharing her gratitude for the foundation's support",
         title: "Video: A mother shares her gratitude (0:49)",
+      },
+      {
+        type: "video",
+        src: hostedAssetUrl(beneficiaryTestimonialVideo.url),
+        poster: hostedAssetUrl(beneficiaryTestimonialPoster.url),
+        alt: "A community woman in a blue-and-yellow patterned outfit sharing her experience",
+        title: "Video: A community member shares her experience",
       },
       {
         src: communityLive,
