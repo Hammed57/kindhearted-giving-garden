@@ -29,4 +29,19 @@ describe("portfolio videos", () => {
 
     expect(newTestimonial).toHaveLength(1);
   });
+
+  it("places the newly uploaded community elder interview first and only once", () => {
+    const communityVoices = PORTFOLIO.find(
+      (project) => project.slug === "live-community-conversations",
+    );
+    expect(communityVoices?.cover.src).toContain("community-elder-interview.mp4");
+
+    const matches = PORTFOLIO.flatMap((project) => [
+      ...(project.cover.type === "video" ? [project.cover] : []),
+      ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
+      ...project.gallery.filter((media) => media.type === "video"),
+    ]).filter((video) => video.src.includes("community-elder-interview.mp4"));
+
+    expect(matches).toHaveLength(1);
+  });
 });

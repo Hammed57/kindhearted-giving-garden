@@ -27,6 +27,8 @@ import motherThanksVideo from "@/assets/mother-thanks-testimony.mp4.asset.json";
 import motherThanksPoster from "@/assets/mother-thanks-poster.jpg.asset.json";
 import beneficiaryTestimonialVideo from "@/assets/community-beneficiary-testimonial.mp4.asset.json";
 import beneficiaryTestimonialPoster from "@/assets/community-beneficiary-testimonial-poster.jpg.asset.json";
+import communityElderInterviewVideo from "@/assets/community-elder-interview.mp4.asset.json";
+import communityElderInterviewPoster from "@/assets/community-elder-interview-poster.jpg.asset.json";
 
 const LOVABLE_ASSET_ORIGIN = "https://kindhearted-giving-garden.lovable.app";
 
@@ -222,11 +224,12 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Video testimonials from elders and community beneficiaries, plus weekly live sessions that unite supporters from Nigeria to the diaspora.",
     cover: {
       type: "video",
-      src: hostedAssetUrl(elderThanksVideo.url),
-      poster: videoPoster,
-      alt: "Community elder giving heartfelt prayers and testimonial for the Olaide Doherty Charity Foundation",
-      w: 1024,
-      h: 576,
+      src: hostedAssetUrl(communityElderInterviewVideo.url),
+      poster: hostedAssetUrl(communityElderInterviewPoster.url),
+      alt: "Community elder in blue traditional attire sharing a testimonial for the Olaide Doherty Charity Foundation",
+      title: "Video: A community elder shares his testimony",
+      w: 576,
+      h: 1024,
     },
     stats: [
       { value: "Weekly", label: "Live streams" },
