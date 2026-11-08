@@ -26,8 +26,6 @@ import {
   whatsappLink,
   donationMessage,
   cardDonationMessage,
-  EMAIL_ADDRESS,
-  EMAIL_LINK,
 } from "@/lib/contact";
 import outreach from "@/assets/outreach-food-distribution.jpg";
 
@@ -50,17 +48,19 @@ export const Route = createFileRoute("/donate")({
   component: Donate,
 });
 
-export const CAUSES: string[] = [
+const CAUSES: string[] = [
   "where it's needed most",
   "food",
+  "health",
   "small business support",
   "youth transformation",
   "community outreach",
 ];
 
-export const CAUSE_LABELS: Record<string, string> = {
+const CAUSE_LABELS: Record<string, string> = {
   "where it's needed most": "Where needed most",
   food: "Food",
+  health: "Health",
   "small business support": "Small businesses",
   "youth transformation": "Youth",
   "community outreach": "Community",
@@ -109,7 +109,7 @@ function Donate() {
 
           <fieldset className="mt-8">
             <legend className="eyebrow text-muted-foreground">1. Choose a cause</legend>
-            <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
               {CAUSES.map((c) => (
                 <button
                   key={c}
@@ -206,11 +206,6 @@ function Donate() {
               <a href={PHONE_TEL} className="font-semibold text-primary">
                 {PHONE_DISPLAY}
               </a>
-              {" or email "}
-              <a href={EMAIL_LINK} className="font-semibold text-primary">
-                {EMAIL_ADDRESS}
-              </a>
-              .
             </p>
           </div>
         </div>

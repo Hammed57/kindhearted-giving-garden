@@ -56,4 +56,14 @@ describe("donation contact", () => {
     const msg = bankTransferConfirmationMessage("food relief", "₦50,000");
     expect(msg).toContain("bank transfer of ₦50,000 towards food relief");
   });
+
+  it("formats health donation message properly", () => {
+    const msg = cardDonationMessage("health", "$50");
+    expect(msg).toContain("card donation of $50 towards health");
+  });
+
+  it("formats food donation message properly", () => {
+    const msg = cardDonationMessage("food", "$50");
+    expect(msg).toContain("card donation of $50 towards food");
+  });
 });
