@@ -43,6 +43,37 @@ const HIGHLIGHTS = [
   },
 ];
 
+const FIELD_VIDEOS = [
+  {
+    src: "/assets/aistudio/VID-20261107-WA0040_51fc7c06.mp4",
+    poster: "/assets/aistudio/elders-outreach-prayers-poster.jpg",
+    title: "Community Elders Outreach & Prayers",
+    tag: "Food Welfare · 0:27",
+    description:
+      "Community elders holding fresh foundation meal packages, offering heartfelt prayers of gratitude and blessings for our donors and team.",
+    slug: "community-food-outreach",
+  },
+  {
+    src: "/assets/aistudio/VID-20261107-WA0039_65ef0982.mp4",
+    poster: "/assets/aistudio/maternity-clinic-thanks-poster.jpg",
+    title: "Community Thanks at Maternity Clinic",
+    tag: "Community Care · 0:18",
+    description:
+      "A mother outside Christ De Executive Clinic sharing appreciation for the neighborhood care and outreach initiatives.",
+    slug: "live-community-conversations",
+  },
+  {
+    src: "https://kindhearted-giving-garden.lovable.app/__l5e/assets-v1/037e48cc-b6af-4296-9621-875dc3cfc9a4/packed-meals-outreach.mp4",
+    poster:
+      "https://kindhearted-giving-garden.lovable.app/__l5e/assets-v1/67634863-8a90-410c-99d8-4f815a51a896/meal-boxes-poster.jpg",
+    title: "Hundreds of Hot Meals Prepared & Sealed",
+    tag: "Food Outreach · 0:15",
+    description:
+      "Rows of neatly labelled, warm nutritious meal packs prepared for widows, orphans, and families.",
+    slug: "community-food-outreach",
+  },
+];
+
 export const Route = createFileRoute("/portfolio/")({
   head: () => ({
     meta: [
@@ -50,7 +81,7 @@ export const Route = createFileRoute("/portfolio/")({
       {
         name: "description",
         content:
-          "Business grants, back-to-school empowerment, food outreach and more — see the projects the OD Charity Foundation has delivered.",
+          "Business grants, back-to-school empowerment, food outreach, field videos and more — see the projects the OD Charity Foundation has delivered.",
       },
       { property: "og:title", content: "Our Portfolio — OD Charity Foundation" },
       {
@@ -115,6 +146,54 @@ function PortfolioIndex() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Field Video Testimonials & Highlights */}
+      <section className="px-5 py-16 md:py-24 border-t border-border">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="eyebrow text-primary">Live from the field</p>
+            <h2 className="mt-4 text-4xl font-semibold md:text-5xl">Video highlights & prayers</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Direct, unscripted footage from our outreaches: community elders offering prayers over
+              warm meal boxes and families testifying to the foundation's impact.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {FIELD_VIDEOS.map((video) => (
+              <div
+                key={video.src}
+                className="flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft"
+              >
+                <div className="relative aspect-[9/16] max-h-[480px] w-full overflow-hidden bg-black">
+                  <video
+                    src={video.src}
+                    poster={video.poster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <p className="eyebrow text-primary">{video.tag}</p>
+                  <h3 className="mt-2 text-xl font-semibold">{video.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{video.description}</p>
+                  <div className="mt-5 pt-4 border-t border-border/60">
+                    <Link
+                      to="/portfolio/$slug"
+                      params={{ slug: video.slug }}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all"
+                    >
+                      View project details <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

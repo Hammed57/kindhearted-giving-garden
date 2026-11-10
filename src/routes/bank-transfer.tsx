@@ -242,7 +242,10 @@ function BankTransferPage() {
               </p>
               <p className="mt-3 text-sm text-muted-foreground">
                 For other questions, email{" "}
-                <a href={EMAIL_LINK} className="font-semibold text-primary underline underline-offset-4">
+                <a
+                  href={EMAIL_LINK}
+                  className="font-semibold text-primary underline underline-offset-4"
+                >
                   {EMAIL_ADDRESS}
                 </a>
                 .

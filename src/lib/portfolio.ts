@@ -158,6 +158,11 @@ export const PORTFOLIO: PortfolioProject[] = [
       "Our team procures bulk sacks of grains, cooking oil, and seasonings, packaging them alongside freshly prepared hot meals in sealed, hygienic containers for families, widows, and children.",
       "Founded by Olaide Doherty (Miss Island Lagos 2001), the foundation's outreach team stands on the frontlines to ensure no child or mother in our community is left hungry.",
     ],
+    video: {
+      src: "/assets/aistudio/VID-20261107-WA0040_51fc7c06.mp4",
+      poster: "/assets/aistudio/elders-outreach-prayers-poster.jpg",
+      title: "Video: Community elders offering prayers of gratitude (0:27)",
+    },
     gallery: [
       {
         src: img28,
@@ -244,6 +249,13 @@ export const PORTFOLIO: PortfolioProject[] = [
     gallery: [
       {
         type: "video",
+        src: "/assets/aistudio/VID-20261107-WA0040_51fc7c06.mp4",
+        poster: "/assets/aistudio/elders-outreach-prayers-poster.jpg",
+        alt: "Community elders holding foundation meal packages and offering heartfelt prayers of gratitude",
+        title: "Video: Community elders offering prayers of gratitude (0:27)",
+      },
+      {
+        type: "video",
         src: hostedAssetUrl(elderThanksVideo.url),
         poster: hostedAssetUrl(elderThanksPoster.url),
         alt: "An elderly woman in a pink cap giving thanks to the foundation",
@@ -262,6 +274,13 @@ export const PORTFOLIO: PortfolioProject[] = [
         poster: hostedAssetUrl(beneficiaryTestimonialPoster.url),
         alt: "A community woman in a blue-and-yellow patterned outfit sharing her experience",
         title: "Video: A community member shares her experience",
+      },
+      {
+        type: "video",
+        src: "/assets/aistudio/VID-20261107-WA0039_65ef0982.mp4",
+        poster: "/assets/aistudio/maternity-clinic-thanks-poster.jpg",
+        alt: "Community woman outside Christ De Executive Clinic sharing gratitude and blessings for the foundation",
+        title: "Video: Community appreciation outside maternity clinic (0:18)",
       },
       {
         src: communityLive,

@@ -1,10 +1,12 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, getRouteApi, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Instagram, Quote, Maximize2 } from "lucide-react";
 import { DonateCta } from "@/components/donate-cta";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { PORTFOLIO, findProject } from "@/lib/portfolio";
+
+const routeApi = getRouteApi("/portfolio/$slug");
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -45,11 +47,23 @@ export const Route = createFileRoute("/portfolio/$slug")({
 });
 
 function ProjectPage() {
-  const { project: p } = Route.useLoaderData();
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const loaderData = routeApi.useLoaderData();
+  const p = loaderData?.project;
+  if (!p) {
+    return (
+      <div className="mx-auto max-w-xl px-5 py-32 text-center">
+        <h1 className="text-4xl font-semibold">Project not found</h1>
+        <p className="mt-3 text-muted-foreground">This project may have moved.</p>
+        <Button asChild variant="hero" size="xl" className="mt-8">
+          <Link to="/portfolio">See all projects</Link>
+        </Button>
+      </div>
+    );
+  }
   const idx = PORTFOLIO.findIndex((x) => x.slug === p.slug);
   const next = PORTFOLIO[(idx + 1) % PORTFOLIO.length] ?? PORTFOLIO[0]!;
   const wide = (p.cover.w ?? 1) > (p.cover.h ?? 1);
-  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   return (
     <>
@@ -107,19 +121,19 @@ function ProjectPage() {
 
       {p.video && (
         <section className="px-5 pt-16">
-          <div className="mx-auto max-w-4xl">
+          <div className="mx-auto max-w-4xl text-center">
             <p className="eyebrow text-primary">Featured Video</p>
-            <h2 className="mt-2 text-2xl font-semibold">
+            <h2 className="mt-2 text-2xl font-semibold md:text-3xl">
               {p.video.title || `${p.title} in action`}
             </h2>
-            <div className="mt-6 overflow-hidden rounded-[2rem] bg-black shadow-soft">
+            <div className="mx-auto mt-6 max-w-md overflow-hidden rounded-[2rem] bg-black shadow-soft">
               <video
                 src={p.video.src}
                 poster={p.video.poster}
                 controls
                 playsInline
                 preload="metadata"
-                className="aspect-video w-full object-contain"
+                className="mx-auto max-h-[580px] w-full object-contain"
               />
             </div>
           </div>

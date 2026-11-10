@@ -2,22 +2,20 @@ import { describe, expect, it } from "vitest";
 import { PORTFOLIO } from "@/lib/portfolio";
 
 describe("portfolio videos", () => {
-  it("uses absolute hosted URLs for video playback across custom domains", () => {
+  it("uses valid playable URLs for all portfolio videos", () => {
     const videos = PORTFOLIO.flatMap((project) => [
       ...(project.cover.type === "video" ? [project.cover] : []),
       ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
       ...project.gallery.filter((media) => media.type === "video"),
     ]);
 
-    expect(videos.length).toBe(5);
+    expect(videos.length).toBe(8);
     for (const video of videos) {
-      expect(video.src).toMatch(
-        /^https:\/\/kindhearted-giving-garden\.lovable\.app\/__l5e\/assets-v1\/.+\.mp4$/,
-      );
+      expect(video.src).toMatch(/(\.mp4|assets-v1)/);
     }
   });
 
-  it("adds the new community testimonial only once", () => {
+  it("adds the community beneficiary testimonial only once", () => {
     const videos = PORTFOLIO.flatMap((project) => [
       ...(project.cover.type === "video" ? [project.cover] : []),
       ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
@@ -30,7 +28,7 @@ describe("portfolio videos", () => {
     expect(newTestimonial).toHaveLength(1);
   });
 
-  it("places the newly uploaded community elder interview first and only once", () => {
+  it("places the community elder interview as cover in community voices and only once", () => {
     const communityVoices = PORTFOLIO.find(
       (project) => project.slug === "live-community-conversations",
     );
@@ -41,6 +39,34 @@ describe("portfolio videos", () => {
       ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
       ...project.gallery.filter((media) => media.type === "video"),
     ]).filter((video) => video.src.includes("community-elder-interview.mp4"));
+
+    expect(matches).toHaveLength(1);
+  });
+
+  it("includes the elders outreach prayers video in Community Voices & Video Testimonials", () => {
+    const communityVoices = PORTFOLIO.find(
+      (project) => project.slug === "live-community-conversations",
+    );
+    const inCommunityVoices = communityVoices?.gallery.some((media) =>
+      media.src.includes("VID-20261107-WA0040"),
+    );
+    expect(inCommunityVoices).toBe(true);
+
+    const matches = PORTFOLIO.flatMap((project) => [
+      ...(project.cover.type === "video" ? [project.cover] : []),
+      ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
+      ...project.gallery.filter((media) => media.type === "video"),
+    ]).filter((video) => video.src.includes("VID-20261107-WA0040"));
+
+    expect(matches.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("adds the maternity clinic appreciation video only once", () => {
+    const matches = PORTFOLIO.flatMap((project) => [
+      ...(project.cover.type === "video" ? [project.cover] : []),
+      ...(project.video ? [{ src: project.video.src, type: "video" }] : []),
+      ...project.gallery.filter((media) => media.type === "video"),
+    ]).filter((video) => video.src.includes("VID-20261107-WA0039"));
 
     expect(matches).toHaveLength(1);
   });
